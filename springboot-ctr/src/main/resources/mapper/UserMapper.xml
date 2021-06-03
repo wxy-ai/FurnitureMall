@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctr.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="User">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        id, username, password, email, phone,  create_time, update_time
+        from shop.mall_user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from shop.mall_user
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="User">
+        insert into shop.mall_user (id, username, password,
+                               email, phone,  create_time,
+                               update_time)
+        values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+                #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},  #{createTime,jdbcType=TIMESTAMP},
+                #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="User">
+        insert into shop.mall_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="User">
+        update shop.mall_user
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                phone = #{phone,jdbcType=VARCHAR},
+            </if>
+
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="User">
+        update shop.mall_user
+        set username = #{username,jdbcType=VARCHAR},
+            password = #{password,jdbcType=VARCHAR},
+            email = #{email,jdbcType=VARCHAR},
+            phone = #{phone,jdbcType=VARCHAR},
+
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="countByUsername" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select
+            count(1)
+        from shop.mall_user
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+
+    <select id="countByEmail" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select
+            count(1)
+        from shop.mall_user
+        where email = #{email,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        id, username, password, email, phone,  create_time, update_time
+        from shop.mall_user
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+</mapper>

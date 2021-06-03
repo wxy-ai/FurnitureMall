@@ -1,0 +1,14 @@
+{
+	"cmsName": "layuiCMS后台管理模版",
+	"version": "v2.0",
+	"author": "ctr",
+	"homePage": "index.html",
+	"server": "linux",
+	"dataBase": "8.00.2039",
+	"maxUpload": "2M",
+	"userRights": "超级管理员",
+	"description": "纯静态页面，不包含数据库",
+	"powerby": "copyright @2021",
+	"record": "粤ICP备14040xxx号-1",
+	"keywords": "layuicms"
+}

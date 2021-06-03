@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>文章列表--layui后台管理模板 2.0</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/public.css" media="all" />
+</head>
+<body class="childrenBody">
+<input id="inputValue" value="none" style="display: none" />
+<form class="layui-form" style="width:80%;">
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="magb15 layui-col-md4 layui-col-xs12">
+			<label class="layui-form-label">类别</label>
+			<div class="layui-input-block">
+				<select name="sort" class="sort" lay-filter="userGrade">
+					<option value="100001">100001</option>
+					<option value="100002">100002</option>
+					<option value="100003">100003</option>
+					<option value="100004">100004 </option>
+					<option value="100005">100005</option>
+					<option value="100006">100006</option>
+					<option value="100007">100007</option>
+					<option value="100008">100008</option>
+					<option value="100009">100009</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">商品名字</label>
+		<div class="layui-input-block">
+			<input type="text" name="shopName" class="layui-input shopName" lay-verify="required" placeholder="商品名字">
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">价格</label>
+		<div class="layui-input-block">
+			<input type="text" name="price" class="layui-input price" lay-verify="required" placeholder="价格">
+		</div>
+	</div>
+<!--	<div class="layui-form-item layui-row layui-col-xs12">-->
+<!--		<label class="layui-form-label">原价</label>-->
+<!--		<div class="layui-input-block">-->
+<!--			<input type="text" name="oldPrice" class="layui-input oldPrice" lay-verify="required" placeholder="原价">-->
+<!--		</div>-->
+<!--	</div>-->
+<!--	<div class="layui-form-item layui-row layui-col-xs12">-->
+<!--		<label class="layui-form-label">描述</label>-->
+<!--		<div class="layui-input-block">-->
+<!--			<input type="text" name="description" class="layui-input description" lay-verify="required" placeholder="描述">-->
+<!--		</div>-->
+<!--	</div>-->
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">图片</label>
+		<div class="layui-input-block">
+			<input type="text" name="img" class="layui-input img" lay-verify="required" placeholder="图片">
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">库存</label>
+		<div class="layui-input-block">
+			<input type="text" name="stock" class="layui-input stock" lay-verify="required" placeholder="库存">
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">状态</label>
+		<div class="layui-input-block">
+			<input type="text" name="status" class="layui-input status" lay-verify="required" placeholder="状态">
+		</div>
+	</div>
+<!--	<div class="layui-form-item layui-row layui-col-xs12">-->
+<!--		<label class="layui-form-label">其它</label>-->
+<!--		<div class="layui-input-block">-->
+<!--			<input type="text" name="other" class="layui-input other" lay-verify="required" placeholder="其它描述">-->
+<!--		</div>-->
+<!--	</div>-->
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-input-block">
+			<button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="addUser">保存</button>
+		</div>
+	</div>
+</form>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="./newsAdd.js"></script>
+</body>
+</html>

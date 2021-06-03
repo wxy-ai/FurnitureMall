@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctr.dao.AdminMapper">
+    <update id="changeUserInfo" parameterType="User">
+        update shop.mall_user
+        <set>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="changeShopInform">
+        update shop.mall_product
+        <set>
+            <if test="categoryId != null">
+                category_id = #{categoryId},
+            </if>
+            <if test=" name != null">
+                name = #{name},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="mainImage != null">
+                main_image = #{mainImage},
+            </if>
+            <if test="stock != null">
+                stock = #{stock},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

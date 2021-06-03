@@ -1,0 +1,24 @@
+{
+	"contentManagement": [
+		{
+			"title": "用户管理",
+			"icon": "fas fa-user",
+			"href": "page/user/userList.html",
+			"spread": false
+		},
+		{
+			"title": "商品管理",
+			"icon": "fas fa-store",
+			"href": "page/shop/shopManage.html",
+			"spread": false
+		},
+		{
+			"title": "订单管理",
+			"icon": "fas fa-shopping-cart",
+			"href": "page/order/orderList.html",
+			"spread": false
+		}
+	]
+}
+
+
